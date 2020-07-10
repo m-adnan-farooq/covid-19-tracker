@@ -7,7 +7,7 @@ import FindReplaceIcon from '@material-ui/icons/FindReplace';
 
 const useStyles = makeStyles({
   root: {
-    width: 500,
+    // width: 500,
     display: 'flex',
     justifyContent: 'center',
     margin: '20px auto',
@@ -16,7 +16,6 @@ const useStyles = makeStyles({
 
 export default function BottomNavBar({screenSwap}) {
   const classes = useStyles();
-  console.log(screenSwap)
 
   return (
     <BottomNavigation
@@ -28,7 +27,7 @@ export default function BottomNavBar({screenSwap}) {
       className={classes.root}
     >
       <BottomNavigationAction label="Global Stats" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="All Country wise Stats" icon={<FindReplaceIcon />} />
+      <BottomNavigationAction label="All Countries Data" icon={<FindReplaceIcon />} />
       <BottomNavigationAction label="Country wise Analysis" icon={<FindReplaceIcon />} />
     </BottomNavigation>
   );

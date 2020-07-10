@@ -20,10 +20,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function GlobalStats({currentScreen}) {
     const classes = useStyles();
-
     const [globalStats, setGlobalStats] = useState();
     const [dataLoad, setDataLoad] = useState(false);
-    console.log(currentScreen)
 
     useEffect(() => {
         async function fetchGlobalStats() {

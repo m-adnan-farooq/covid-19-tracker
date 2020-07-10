@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         display: 'flex',
-        // flexWrap: 'wrap',
         '& > *': {
             //   margin: theme.spacing(1),
             width: '20%',
@@ -62,9 +61,7 @@ export default function CountryForm() {
     function handleChange(val) {
         countryData.map((key, index) => {
             if (countryData[index].title === val) {
-                console.log(countryData[index])
                 setCountry(countryData[index]);
-                console.log(country1);
             }
             return (
                 <div>
@@ -134,43 +131,43 @@ export default function CountryForm() {
                     </NativeSelect>
                 </FormControl>
             </div>
-            <div className={classes.root}>
-                <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(0,0,255,0.8)' }}>
-                    <Typography variant="h5" gutterBottom>
-                        <br />
-                        <NumberFormat value={country1.total_cases} displayType={'text'} thousandSeparator={true} />
-                    </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
-                        Total Cases
-                        </Typography>
-                </Paper>
-                <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(255,165,0,0.8)' }}>
-                    <Typography variant="h5" gutterBottom>
-                        <br />
-                        <NumberFormat value={country1.total_serious_cases + country1.total_active_cases} displayType={'text'} thousandSeparator={true} />
-                    </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
-                        Active
-                        </Typography>
-                </Paper>
-                <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(0,128,0,0.8)' }}>
-                    <Typography variant="h5" gutterBottom>
-                        <br />
-                        <NumberFormat value={country1.total_recovered} displayType={'text'} thousandSeparator={true} />
-                    </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
-                        Recovered
-                        </Typography>
-                </Paper>
-                <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(255,0,0,0.8)' }}>
-                    <Typography variant="h5" gutterBottom >
-                        <br />
-                        <NumberFormat value={country1.total_deaths} displayType={'text'} thousandSeparator={true} />
-                    </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
-                        Deaths
-                    </Typography>
-                </Paper>
+            <div className={classes.root} >
+                        <Paper elevation={3}  style={{ color: 'white', backgroundColor: 'rgba(0,0,255,0.8)' }} >
+                            <Typography variant="h5" gutterBottom>
+                                <br />
+                                <NumberFormat value={country1.total_cases} displayType={'text'} thousandSeparator={true} />
+                            </Typography>
+                            <Typography variant="subtitle1" gutterBottom>
+                                Total Cases
+                                </Typography>
+                        </Paper>
+                        <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(255,165,0,0.8)' }}>
+                            <Typography variant="h5" gutterBottom>
+                                <br />
+                                <NumberFormat value={country1.total_serious_cases + country1.total_active_cases} displayType={'text'} thousandSeparator={true} />
+                            </Typography>
+                            <Typography variant="subtitle1" gutterBottom>
+                                Active
+                                </Typography>
+                        </Paper>
+                        <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(0,128,0,0.8)' }}>
+                            <Typography variant="h5" gutterBottom>
+                                <br />
+                                <NumberFormat value={country1.total_recovered} displayType={'text'} thousandSeparator={true} />
+                            </Typography>
+                            <Typography variant="subtitle1" gutterBottom>
+                                Recovered
+                                </Typography>
+                        </Paper>
+                        <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(255,0,0,0.8)' }}>
+                            <Typography variant="h5" gutterBottom >
+                                <br />
+                                <NumberFormat value={country1.total_deaths} displayType={'text'} thousandSeparator={true} />
+                            </Typography>
+                            <Typography variant="subtitle1" gutterBottom>
+                                Deaths
+                            </Typography>
+                        </Paper>
             </div >
             
             <div>

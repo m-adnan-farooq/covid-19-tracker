@@ -12,12 +12,18 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
+    container: {
+        justifyContent: 'center',
+    },
     paper: {
         padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary,
         alignItems: 'center',
-        paddingTop: '50px'
+        paddingTop: '90px',
+        paddingBottom: '0px',
+        height: 'calc(100% - 90px)'
+        
     },
     paper1: {
         padding: theme.spacing(2),
@@ -25,17 +31,15 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.secondary,
         alignItems: 'center',
     },
+
 }));
 
 export default function MainGrid({ currentScreen }) {
     const classes = useStyles();
-    console.log(currentScreen)
     if (currentScreen === 0)
         return (
             <div className={classes.root}>
-                <Grid container spacing={3}>
-                    <Grid item xs={'auto'} sm={1}>
-                    </Grid>
+                <Grid container spacing={3} className={classes.container}>
                     <Grid item xs={12} sm={4}>
                         <Paper className={classes.paper}>
                             <GlobalStats currentScreen={currentScreen} />
@@ -52,7 +56,7 @@ export default function MainGrid({ currentScreen }) {
         );
     else if (currentScreen ===1) 
         return (
-            <Grid container spacing={3}>
+            <Grid container spacing={3} className={classes.container}>
                 <Grid item xs={12} sm={10}>
                     <CountryStats/>
                 </Grid>     
@@ -61,9 +65,7 @@ export default function MainGrid({ currentScreen }) {
     else if (currentScreen === 2)
             return(
                 <div className={classes.root}>
-                <Grid container spacing={3}>
-                    <Grid item xs={'auto'} sm={1}>
-                    </Grid>
+                <Grid container spacing={3} className={classes.container}>
                     <Grid item xs={12} sm={10}>
                         <Paper className={classes.paper}>
                             <CountryForm/>
@@ -75,11 +77,8 @@ export default function MainGrid({ currentScreen }) {
             );
         else return (
         <div className={classes.root}>
-            <Grid container spacing={3}>
-                <Grid item xs={'auto'} sm={1}>
-
-                </Grid>
-                <Grid item xs={12} sm={4}>
+            <Grid container spacing={3} className={classes.container}>
+                <Grid item xs = {12} sm={4}>
                     <Paper className={classes.paper}>
                         <GlobalStats currentScreen={currentScreen} />
                     </Paper>
