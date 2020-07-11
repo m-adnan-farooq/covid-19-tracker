@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
             height: theme.spacing(16),
             margin: '0px auto 0px auto',
         },
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: 'column'
+        },
 
     },
     form: {
@@ -29,7 +32,10 @@ const useStyles = makeStyles((theme) => ({
         padding: 10,
         color: theme.palette.text.secondary,
         margin: '0px auto 50px auto',
-    },
+        [theme.breakpoints.down('sm')]: {
+            width: '80%',
+            },
+        },
     grid: {
         margin: '10px 20px 10px 20px',
     },
@@ -132,7 +138,7 @@ export default function CountryForm() {
                 </FormControl>
             </div>
             <div className={classes.root} >
-                        <Paper elevation={3}  style={{ color: 'white', backgroundColor: 'rgba(0,0,255,0.8)' }} >
+                        <Paper className = {classes.paper} elevation={3}  style={{ color: 'white', backgroundColor: 'rgba(0,0,255,0.8)' }} >
                             <Typography variant="h5" gutterBottom>
                                 <br />
                                 <NumberFormat value={country1.total_cases} displayType={'text'} thousandSeparator={true} />
@@ -141,7 +147,7 @@ export default function CountryForm() {
                                 Total Cases
                                 </Typography>
                         </Paper>
-                        <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(255,165,0,0.8)' }}>
+                        <Paper className = {classes.paper} elevation={3} style={{ color: 'white', backgroundColor: 'rgba(255,165,0,0.8)' }}>
                             <Typography variant="h5" gutterBottom>
                                 <br />
                                 <NumberFormat value={country1.total_serious_cases + country1.total_active_cases} displayType={'text'} thousandSeparator={true} />
@@ -150,7 +156,7 @@ export default function CountryForm() {
                                 Active
                                 </Typography>
                         </Paper>
-                        <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(0,128,0,0.8)' }}>
+                        <Paper className = {classes.paper} elevation={3} style={{ color: 'white', backgroundColor: 'rgba(0,128,0,0.8)' }}>
                             <Typography variant="h5" gutterBottom>
                                 <br />
                                 <NumberFormat value={country1.total_recovered} displayType={'text'} thousandSeparator={true} />
@@ -159,7 +165,7 @@ export default function CountryForm() {
                                 Recovered
                                 </Typography>
                         </Paper>
-                        <Paper elevation={3} style={{ color: 'white', backgroundColor: 'rgba(255,0,0,0.8)' }}>
+                        <Paper className = {classes.paper} elevation={3} style={{ color: 'white', backgroundColor: 'rgba(255,0,0,0.8)' }}>
                             <Typography variant="h5" gutterBottom >
                                 <br />
                                 <NumberFormat value={country1.total_deaths} displayType={'text'} thousandSeparator={true} />
